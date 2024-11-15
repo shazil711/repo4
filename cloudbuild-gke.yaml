@@ -1,16 +1,12 @@
-#https://source.developers.google.com/p/storied-core-424404-t8/r/repo-4
- 
-      
 steps:
-- name: 'gcr.io'
-  args: ['create', 'https://github.com/shazil711/repo4/p/storied-core-424404-t8/r/repo-4']
-
+# Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t',  'gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}', '.']
-
+  args: ['build', '-t', 'gcr.io/storied-core-424404-t8/gke-image', '.']
+# Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}']
-  
+  args: ['push', 'gcr.io/storied-core-424404-t8/gke-image']
+
+
 
 # kubectl set image deployment/cicd-app-1 runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}
 - name: 'gcr.io/cloud-builders/kubectl'
