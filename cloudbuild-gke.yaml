@@ -18,10 +18,10 @@ steps:
   - 'deployment/cicd-app-1'
   - 'runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}'
   env : 
-  - 'CLOUDSDK_COMPUTE_ZONE=asia-southeast1-b'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cicd-cluster'
 
 substitutions:
-  _PROJECT_ID : gcp-devops-338510
+  _PROJECT_ID : us-central1-a
   _CINAME : gke-image
   _VERSION : v3.0
