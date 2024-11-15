@@ -1,5 +1,10 @@
 #https://source.developers.google.com/p/storied-core-424404-t8/r/repo-4
-
+  - name: Docker Auth
+    id: docker-auth
+    uses: 'docker/login-action@v1'
+    with:
+      username: 'shazil711'
+      
 steps:
 - name: 'gcr.io'
   args: ['create', 'https://github.com/shazil711/repo4/p/storied-core-424404-t8/r/repo-4']
