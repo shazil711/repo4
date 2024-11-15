@@ -22,6 +22,6 @@ steps:
   - 'CLOUDSDK_CONTAINER_CLUSTER=cicd-cluster'
 
 substitutions:
-  _PROJECT_ID : us-central1-a
+  _PROJECT_ID : storied-core-424404-t8
   _CINAME : gke-image
   _VERSION : v3.0
