@@ -1,7 +1,7 @@
 #https://source.developers.google.com/p/gcp-devops-338510/r/repo-5
 
 steps:
-- name: 'gcr.io/cloud-builders/git'
+- name: 'gcr.io/cloud-builders'
   args: ['clone', 'https://source.developers.google.com/p/gcp-devops-338510/r/repo-5']
 
 - name: 'gcr.io/cloud-builders/docker'
