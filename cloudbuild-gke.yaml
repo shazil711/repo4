@@ -1,9 +1,5 @@
 #https://source.developers.google.com/p/storied-core-424404-t8/r/repo-4
 
-steps:
-- name: 'gcr.io/cloud-builders'
-  args: ['clone', 'https://source.developers.google.com/p/storied-core-424404-t8/r/repo-4']
-
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build','-t',  'gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}', '.']
 
