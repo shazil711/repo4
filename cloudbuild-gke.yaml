@@ -1,19 +1,19 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/storied-core-424404-t8/gke-image', '.']
+  args: ['build', '-t', 'gcr.io/storied-core-424404-t8/cicd-image', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/storied-core-424404-t8/gke-image']
 
 
 
-# kubectl set image deployment/cicd-app-1 runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}
+# kubectl set image deployment/cicd-image runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}
 - name: 'gcr.io/cloud-builders/kubectl'
   args :
   - 'set'
   - 'image'
-  - 'deployment/runimage'
+  - 'deployment/cicd-image'
   - 'runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}'
   env : 
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
