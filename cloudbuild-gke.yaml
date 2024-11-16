@@ -13,7 +13,7 @@ steps:
   args :
   - 'set'
   - 'image'
-  - 'deployment/cicd-app-1'
+  - 'deployment/runimage'
   - 'runimage-sha256-1=gcr.io/${_PROJECT_ID}/${_CINAME}:${_VERSION}'
   env : 
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
@@ -21,7 +21,7 @@ steps:
 
 substitutions:
   _PROJECT_ID : storied-core-424404-t8
-  _CINAME : gke-image
+  _CINAME : runimage
   _VERSION : v3.0
 
 
