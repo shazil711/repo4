@@ -11,3 +11,9 @@ steps:
   args: ['run', 'deploy', 'runwithcicd', '--image', 'gcr.io/storied-core-424404-t8/runimage', '--region', 'us-central1', '--allow-unauthenticated']
 images:
 - gcr.io/storied-core-424404-t8/runimage
+
+
+serviceAccount: "cicd-sa@storied-core-424404-t8.iam.gserviceaccount.com"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
